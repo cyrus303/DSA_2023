@@ -30,16 +30,16 @@ function arrayReversal(arr) {
 function arrrayReversal2(arr) {
   let start = 0;
   let end = arr.length - 1;
-  let mid = Math.ceil(arr.length / 2);
   let temp;
 
-  console.log(start, end, mid);
+  console.log(start, end);
 
-  while (start < mid) {
+  while (start < end) {
     temp = arr[start];
     arr[start] = arr[end];
     arr[end] = temp;
     start++;
+    end--;
   }
   console.log(arr);
 }
