@@ -35,3 +35,5 @@ function frequencyCounter(array, n) {
 array = [1, 1, 2, 2, 2, 2, 3];
 n = 3;
 frequencyCounter(array, n);
+
+//Write a program to Count number of occurrences (or frequency) in a sorted array
