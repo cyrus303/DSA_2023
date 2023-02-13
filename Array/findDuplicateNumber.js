@@ -32,7 +32,6 @@ function duplicate(nums) {
 
 let nums = [3, 1, 0, 4, 2, 5, 6, 7, 8, 0];
 duplicate(nums);
-
 //   let numsCount = {};
 
 //   nums.forEach((element) => {
