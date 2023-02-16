@@ -25,18 +25,7 @@ function zeroSum(arr) {
   let zero = false;
   let sum = 0;
 
-  //   for (i = 0; i < arr.length; i++) {
-  //     sum = sum + arr[i];
-
-  //     if (sum === 0 || sumHash.has(sum)) {
-  //       return true;
-  //     }
-
-  //     sumHash.add(sum);
-  //   }
-
   arr.forEach((element) => {
-    console.log(element);
     sum = sum + element;
 
     if (sum === 0 || sumHash.has(sum)) {
@@ -44,7 +33,6 @@ function zeroSum(arr) {
     }
     sumHash.add(sum);
   });
-
   return zero;
 }
 
