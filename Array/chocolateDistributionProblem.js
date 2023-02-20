@@ -8,8 +8,7 @@ the task is to distribute chocolate packets among M students such that :
 
 1. Each student gets exactly one packet.
 2. The difference between maximum number of chocolates given to a 
-
-student and minimum number of chocolates given to a student is minimum.
+   student and minimum number of chocolates given to a student is minimum.
 
 Input:
 N = 8, M = 5
@@ -33,39 +32,46 @@ Expected Time Complexity: O(N*Log(N))
 Expected Auxiliary Space: O(1)
 */
 
+// function chocoDistribution(array, students) {
+//   let n = array.length;
+
+//   array = array.sort((a, b) => a - b);
+//   console.log(array);
+//   let windowSize = students;
+
+//   let left = 0;
+//   let right = windowSize - 1;
+
+//   let diff = [];
+
+//   while (right < n) {
+//     localDiff = array[right] - array[left];
+//     diff.push(localDiff);
+
+//     left++;
+//     right++;
+//   }
+//   console.log(Math.min(...diff));
+// }
+
 function chocoDistribution(array, students) {
-  let n = array.length - 1;
+  let n = array.length;
+  let m = students;
+
   array = array.sort((a, b) => a - b);
-  let windowSize = students;
-  console.log(array);
 
-  let left = 0;
-  let right = windowSize;
-  let windowSum = 0;
-  let globalMin = 9999999999;
+  let gloablDiff = Number.MAX_VALUE;
 
-  while (right <= n + 1) {
-    let windowAverage = 0;
+  for (i = 0; i + m - 1 < n; i++) {
+    let localDiff = array[i + m - 1] - array[i];
 
-    for (i = left; i < right; i++) {
-      windowSum += array[i];
-      windowAverage = Math.round(windowSum / windowSize);
-      console.log(left, right, array[i]);
-    }
-
-    globalMin = Math.min(globalMin, windowAverage);
-    console.log(`globalMin: ${globalMin}`);
-    console.log(`windowAverage:${windowAverage}`);
-
-    left++;
-    right++;
-    // console.log(windowAverage);
+    if (localDiff < gloablDiff) gloablDiff = localDiff;
   }
+
+  console.log(gloablDiff);
 }
 
-let array = [3, 4, 1, 9, 56, 7, 9, 12];
-let students = 5;
+let array = [7, 3, 2, 4, 9, 12, 56];
+let students = 3;
 
 chocoDistribution(array, students);
-
-console.log(Math.round());
