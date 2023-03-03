@@ -50,6 +50,41 @@ function threeSum(array) {
   return result;
 }
 
-let array = [-1, 0, 1, 2, -1, -4];
-result = threeSum(array);
+// let array = [-1, 0, 1, 2, -1, -4];
+// result = threeSum(array);
+// console.log(result);
+
+function threeSum2(array, target) {
+  let count = 0;
+  let n = array.length;
+  array = array.sort((a, b) => a - b);
+
+  for (i = 0; i < n; i++) {
+    let a = array[i];
+    if (i > 0 && a === array[i - 1]) {
+      continue;
+    }
+    left = i + 1;
+    right = n - 1;
+
+    while (left < right) {
+      sum = a + array[left] + array[right];
+      if (sum > target) {
+        right--;
+      } else if (sum < target) {
+        left++;
+      } else {
+        return 1;
+        // while (array[left] === array[left - 1] && left < right) {
+        //   left++;
+        // }
+      }
+    }
+  }
+  return 0;
+}
+
+let array = [1, 4, 45, 6, 10, 8];
+target = 45;
+result = threeSum2(array);
 console.log(result);
