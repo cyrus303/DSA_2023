@@ -38,10 +38,11 @@ function mergeIntervals(array) {
 }
 
 let array = [
-  [8, 10],
   [1, 3],
-  [2, 6],
-  [15, 18],
+  [10, 20],
+  [2, 5],
+  [4, 8],
 ];
 
-mergeIntervals(array);
+value = mergeIntervals1(array);
+console.log(value);
