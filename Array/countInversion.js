@@ -51,14 +51,6 @@ function countInversion(array, n) {
   return count;
 }
 
-function countInversion(array, n) {
-  let count = 0;
-
-  let i = 0;
-
-  return count;
-}
-
 let array = [2, 3, 4, 5, 6];
 let n = array.length;
 
