@@ -39,7 +39,6 @@ function longestPalindrome(s) {
     let left = i;
     let right = i;
     checkPalindrome(left, right);
-
     // checking for even length palindrome
     left = i;
     right = i + 1;
@@ -49,6 +48,6 @@ function longestPalindrome(s) {
   return result;
 }
 
-let s = 'aaaabbaa';
+let s = 'aaaaabbaa';
 palindrome = longestPalindrome(s);
 console.log(palindrome);
